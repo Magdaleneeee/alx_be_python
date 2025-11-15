@@ -4,7 +4,6 @@ from simple_calculator import SimpleCalculator
 class TestSimpleCalculator(unittest.TestCase):
 
     def setUp(self):
-        """Create calculator instance before each test."""
         self.calc = SimpleCalculator()
 
     def test_addition(self):
@@ -17,15 +16,15 @@ class TestSimpleCalculator(unittest.TestCase):
         self.assertEqual(self.calc.subtract(0, 0), 0)
         self.assertEqual(self.calc.subtract(-1, -1), 0)
 
-    def test_multiply(self):
+    def test_multiplication(self):   # <-- IMPORTANT
         self.assertEqual(self.calc.multiply(4, 2), 8)
         self.assertEqual(self.calc.multiply(-1, 1), -1)
         self.assertEqual(self.calc.multiply(0, 5), 0)
 
-    def test_divide(self):
+    def test_divide(self):           # <-- IMPORTANT
         self.assertEqual(self.calc.divide(10, 2), 5)
         self.assertEqual(self.calc.divide(-10, 2), -5)
-        self.assertIsNone(self.calc.divide(5, 0))  # test division by zero
+        self.assertIsNone(self.calc.divide(5, 0))
 
 if __name__ == "__main__":
     unittest.main()
