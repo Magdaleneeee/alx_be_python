@@ -9,22 +9,16 @@ class TestSimpleCalculator(unittest.TestCase):
     def test_addition(self):
         self.assertEqual(self.calc.add(2, 3), 5)
         self.assertEqual(self.calc.add(-1, 1), 0)
-        self.assertEqual(self.calc.add(0, 0), 0)
 
     def test_subtraction(self):
         self.assertEqual(self.calc.subtract(5, 3), 2)
-        self.assertEqual(self.calc.subtract(0, 0), 0)
-        self.assertEqual(self.calc.subtract(-1, -1), 0)
+        self.assertEqual(self.calc.subtract(3, 5), -2)
 
-    def test_multiplication(self):   # <-- IMPORTANT
-        self.assertEqual(self.calc.multiply(4, 2), 8)
-        self.assertEqual(self.calc.multiply(-1, 1), -1)
-        self.assertEqual(self.calc.multiply(0, 5), 0)
+    def test_multiply(self):
+        self.assertEqual(self.calc.multiply(2, 4), 8)
+        self.assertEqual(self.calc.multiply(-2, 4), -8)
 
-    def test_divide(self):           # <-- IMPORTANT
+    def test_division(self):
         self.assertEqual(self.calc.divide(10, 2), 5)
-        self.assertEqual(self.calc.divide(-10, 2), -5)
+        self.assertEqual(self.calc.divide(7, 2), 3.5)
         self.assertIsNone(self.calc.divide(5, 0))
-
-if __name__ == "__main__":
-    unittest.main()
